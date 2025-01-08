@@ -269,55 +269,76 @@ class myApp extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.coffee,
+                                  color: Colors.indigo.shade900,
                                 ),
                                 Container(
-                                    color: Colors.red,
+                                    //color: Colors.red,
+                                    width:270,
                                     child: Text(
-                                        "Mensa"
+                                        "Mensa",
+                                        style: TextStyle(
+                                          color: Colors.indigo.shade900,
+                                        ),
                                     ),
                                   ),
                                 Icon(
                                   Icons.dehaze_rounded,
+                                  color: Colors.indigo.shade900,
                                 ),
                               ],
                             ),
                           ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Container(
-                              width: 150,
+                              color: Colors.red,
+                              width: 170,
                               height: 60,
                               child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text.rich(
-                                    TextSpan(
+                                  Container(
+                                    child: Row(
                                       children: [
-                                        TextSpan(
-                                          text: "Wann? ",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                        Text.rich(
+                                          TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: "Wann? ",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: "4.DS",
+                                              ),
+                                            ],
                                           ),
-                                        ),
-                                        TextSpan(
-                                          text: "4.DS",
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Text.rich(
-                                    TextSpan(
+                                  Container(
+                                    child: Row(
                                       children: [
-                                        TextSpan(
-                                          text: "Wo? ",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                        Text.rich(
+                                          TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: "Wo? ",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: "Alte Mensa",
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                        TextSpan(
-                                          text: "Alte Mensa",
-                                        ),
                                       ],
+
                                     ),
                                   ),
                                 ],
@@ -665,7 +686,7 @@ class myApp extends StatelessWidget {
                               const Radius.circular(20),
                             ),
                           ),
-                          height: 65,
+                          height: 70,
                           width: 250,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
