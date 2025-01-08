@@ -215,7 +215,7 @@ class MyApp extends StatelessWidget {
           //Mensa Feld ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           Container(
             width: screenSize.width,
-            height: 115,
+            height: 150,
             decoration: BoxDecoration(
               color: Colors.grey,
               border: Border.all(
@@ -255,43 +255,49 @@ class MyApp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      height: 60,
-                      child: Column(
-                        children: [
-                          Text.rich(
-                            textAlign: TextAlign.left,
-                            TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: "Wann? ",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Container(
+                        height: 60,
+                        child: Column(
+                          children: [
+                            Text.rich(
+                              textAlign: TextAlign.left,
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: "Wann? ",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                TextSpan(
-                                  text: "4.DS",
-                                ),
-                              ],
-                            ),
-                          ),
-                          Text.rich(
-                            textAlign: TextAlign.left,
-                            TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: "Wo? ",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                  TextSpan(
+                                    text: "4.DS",
                                   ),
-                                ),
-                                TextSpan(
-                                  text: "Alte Mensa",
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(left: 26),
+                              child: Text.rich(
+                                textAlign: TextAlign.left,
+                                TextSpan(
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: "Wo? ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "Alte Mensa",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ), //-----------------------------------------------------------------------------------
                     Container(
@@ -320,7 +326,7 @@ class MyApp extends StatelessWidget {
 
           //Stundenplan Feld ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           Container(
-            width: 400,
+            width: screenSize.width,
             height: 185,
             decoration: BoxDecoration(
               color: Colors.indigo.shade100,
@@ -356,7 +362,6 @@ class MyApp extends StatelessWidget {
                       ),
                       Container(
                         color: Colors.indigo.shade100,
-                        width: 280,
                         child: Text.rich(
                           TextSpan(
                             text: "Heute",
@@ -382,12 +387,11 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   height: 65,
-                  width: 250,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: 70,
+                          width: screenSize.width*0.3,
                           height: 60,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -462,7 +466,7 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 70,
+                          width: screenSize.width*0.3,
                           height: 60,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -537,7 +541,7 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 70,
+                          width: screenSize.width*0.3,
                           height: 60,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -626,12 +630,11 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   height: 65,
-                  width: 250,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        width: 70,
+                        width: screenSize.width*0.3,
                         height: 60,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -706,7 +709,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 70,
+                        width: screenSize.width*0.3,
                         height: 60,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -781,7 +784,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 70,
+                        width: screenSize.width*0.3,
                         height: 60,
                         decoration: BoxDecoration(
                           color: Colors.white,
