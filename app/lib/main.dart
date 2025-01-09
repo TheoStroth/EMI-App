@@ -1,97 +1,92 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(myApp());
+void main() {
+  runApp(MyApp());
 }
 
-class myApp extends StatelessWidget {
-  const myApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: Scaffold(
-
           //AppBar oben+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           appBar: AppBar(
-            backgroundColor: Colors.white,
-
+            backgroundColor: Color(0xfffefffe),
             leading: IconButton(
-              icon: Icon(
-                  Icons.dehaze_rounded
-              ),
-              onPressed: (){
-
-              },
+              icon: Icon(Icons.dehaze_rounded),
+              onPressed: () {},
             ),
-            title: Text(
-              "           Study-App",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.indigo.shade900,
+            title: Align(
+              alignment: Alignment.topCenter,
+              child: Text.rich(
+                TextSpan(
+                  text: "Study-App",
+                  style: TextStyle(
+                    color: Colors.indigo.shade900,
+                    fontSize: 20,
+                  ),
+                ),
               ),
             ),
             actions: [
               IconButton(
-                icon: Icon(
-                    Icons.account_circle_rounded
-                ),
-                onPressed: (){
-
-                },
+                icon: Icon(Icons.account_circle_rounded),
+                onPressed: () {},
               ),
             ],
           ),
-          backgroundColor: Colors.indigo.shade900,
-
+          backgroundColor: Color(0xff032555),
 
           // Mitte +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           body: Center(
               child: Column(
-                children:
-                [
+                children: [
                   //rotes Neuigkeiten Feld +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                   Container(
-                    width: 400,
-                    height: 125,
-
+                    width: screenSize.width,
+                    height: 120,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Color(0xffb32524),
                       border: Border.all(
-                        color: Colors.indigo.shade900,
+                        color: Color(0xff032555),
                         width: 10,
                       ),
                       borderRadius: const BorderRadius.all(
                         const Radius.circular(20),
                       ),
                     ),
-
                     child: Column(
                       children: [
                         Container(
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Colors.red,
+                            color: Color(0xffb32524),
                             border: Border.all(
-                              color: Colors.red,
+                              color: Color(0xffb32524),
                               width: 5,
                             ),
                             borderRadius: const BorderRadius.all(
                               const Radius.circular(20),
                             ),
                           ),
-                          child:
-                          Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Icon(
                                 Icons.error_rounded,
                                 color: Colors.white,
                               ),
-                              Text(
-                                "Meldung",
-                                style: TextStyle(
-                                  color: Colors.white,
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Meldung",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                               IconButton(
@@ -99,9 +94,7 @@ class myApp extends StatelessWidget {
                                   Icons.close,
                                   size: 20,
                                 ),
-                                onPressed: () {
-
-                                },
+                                onPressed: () {},
                                 color: Colors.white,
                               ),
                             ],
@@ -110,140 +103,207 @@ class myApp extends StatelessWidget {
 
                         //
                         Container(
-                          width: 350,
-                          height: 60,
+                          width: screenSize.width,
+                          margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                           child: Text.rich(
+                            textAlign: TextAlign.center,
                             TextSpan(
-                              text: "Die Einschreibung für mündliche \nPrüfungen hat begonnen und endet am \n",
+                              text:
+                              "Die Einschreibung für mündliche \n Prüfungen hat begonnen und endet am ",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 10,
+                                fontSize: 12,
                               ),
-
                               children: [
                                 TextSpan(
-                                  text: "21.01.2025",
+                                  text: "\n21.01.2025",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 10,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],
-
                             ),
                           ),
                         ),
                       ],
                     ),
-
                   ),
 
                   // Container Feld unter roten Feld und über Mensa Feld  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                   Container(
-                    width: 400,
-                    height: 90,
-                    color: Colors.indigo.shade900,
-
+                    width: screenSize.width,
+                    height: 80,
+                    color: Color(0xff032555),
                     child: Column(
                       children: [
                         Text(
                           "Donnerstag, 12. Dezember",
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 17,
                           ),
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
+                            Container(
+                              //color: Colors.red,
+                              width: 20,
+                              height: 40,
+                            ),
                             Column(
-
                               children: [
-                                IconButton(
-                                  onPressed: () {
-
-                                  },
-                                  icon: Icon(
-                                    Icons.account_circle_rounded,
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.lightBlue,
+                                    border: Border.all(
+                                      color: Colors.indigo.shade900,
+                                      width: 0,
+                                    ),
+                                    borderRadius: const BorderRadius.all(
+                                      const Radius.circular(7),
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  "OPAL",
-                                  style: TextStyle(
+                                  child: Icon(
+                                    Icons.attach_file,
                                     color: Colors.white,
+                                  ),
+
+                                ),
+                                Text.rich(
+                                  TextSpan(
+                                    text: "OPAL",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                             Column(
                               children: [
-                                IconButton(
-                                  onPressed: () {
-
-                                  },
-                                  icon: Icon(
-                                    Icons.account_circle_rounded,
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.orange,
+                                    border: Border.all(
+                                      color: Colors.indigo.shade900,
+                                      width: 0,
+                                    ),
+                                    borderRadius: const BorderRadius.all(
+                                      const Radius.circular(7),
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  "Selma",
-                                  style: TextStyle(
+                                  child: Icon(
+                                    Icons.folder_outlined,
                                     color: Colors.white,
+                                  ),
+
+                                ),
+                                Text.rich(
+                                  TextSpan(
+                                    text: "Selma",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                             Column(
                               children: [
-                                IconButton(
-                                  onPressed: () {
-
-                                  },
-                                  icon: Icon(
-                                    Icons.account_circle_rounded,
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.cyan,
+                                    border: Border.all(
+                                      color: Colors.indigo.shade900,
+                                      width: 0,
+                                    ),
+                                    borderRadius: const BorderRadius.all(
+                                      const Radius.circular(7),
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  "Matrix",
-                                  style: TextStyle(
+                                  child: Icon(
+                                    Icons.chat_bubble_outline,
                                     color: Colors.white,
+                                  ),
+
+                                ),
+                                Text.rich(
+                                  TextSpan(
+                                    text: "Matrix",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                             Column(
                               children: [
-                                IconButton(
-                                  onPressed: () {
-
-                                  },
-                                  icon: Icon(
-                                    Icons.account_circle_rounded,
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.pink,
+                                    border: Border.all(
+                                      color: Colors.indigo.shade900,
+                                      width: 0,
+                                    ),
+                                    borderRadius: const BorderRadius.all(
+                                      const Radius.circular(7),
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  "Mail",
-                                  style: TextStyle(
+                                  child: Icon(
+                                    Icons.email_outlined,
                                     color: Colors.white,
+                                  ),
+
+                                ),
+                                Text.rich(
+                                  TextSpan(
+                                    text: "Mail",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ],
+                            ),
+                            Container(
+                              //color: Colors.red,
+                              height: 40,
+                              width: 20,
                             ),
                           ],
                         ),
                       ],
                     ),
-
                   ),
 
                   //Mensa Feld ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                   Container(
-                    width: 400,
-                    height: 115,
-
+                    width: screenSize.width,
+                    height: 110,
                     decoration: BoxDecoration(
                       color: Colors.indigo.shade100,
                       border: Border.all(
-                        color: Colors.indigo.shade900,
+                        //color: Colors.yellow,
+                        color: Color(0xff032555),
                         width: 10,
                       ),
                       borderRadius: const BorderRadius.all(
@@ -254,136 +314,212 @@ class myApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
+                          height: 25,
+                          width: 400,
                           decoration: BoxDecoration(
+                            //color: Colors.yellow,
                             color: Colors.indigo.shade100,
-                            border: Border.all(
-                              color: Colors.indigo.shade100,
-                              width: 5,
-                            ),
                             borderRadius: const BorderRadius.all(
                               const Radius.circular(20),
                             ),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Icon(
-                                  Icons.coffee,
-                                  color: Colors.indigo.shade900,
-                                ),
-                                Container(
-                                    //color: Colors.red,
-                                    width:270,
-                                    child: Text(
-                                        "Mensa",
-                                        style: TextStyle(
-                                          color: Colors.indigo.shade900,
-                                        ),
-                                    ),
+                            children: [
+                              Container(
+                                  child: Icon(
+                                    Icons.local_cafe_outlined,
+                                    color: Colors.indigo.shade900,
+                                    size: 20,
                                   ),
-                                Icon(
-                                  Icons.dehaze_rounded,
-                                  color: Colors.indigo.shade900,
+                                  //color: Colors.green,
+                                height: 10,
+                              ),
+                              Container(
+                                //color: Colors.green,
+                                height: 40,
+                                width: 275,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text.rich(
+                                          TextSpan(
+                                            text: "Mensa",
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              color: Colors.indigo.shade900,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                ],
                                 ),
-                              ],
-                            ),
+                              ),
+                              Container(
+                                //color: Colors.blue,
+                                child: Icon(
+                                  Icons.more_vert,
+                                  color: Colors.indigo.shade900,
+                                  size: 20,
+                                ),
+                              ),
+                            ],
                           ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              color: Colors.red,
-                              width: 170,
-                              height: 60,
-                              child: Column(
+                        ),
+                        Container(
+                          //color: Colors.green,
+                          height: 60,
+                          width: 340,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                //color: Colors.blue,
+                                height: 2000,
+                                width: 120,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      //color: Colors.red,
+                                      width: 120,
+                                      height: 20,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text.rich(
+                                            TextSpan(
+                                              text: "Wann? ",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.indigo.shade900,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                          Text.rich(
+                                            TextSpan(
+                                              text: "4.DS",
+                                              style: TextStyle(
+                                                color: Colors.indigo.shade900,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      height: 20,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text.rich(
+                                            TextSpan(
+                                              text: "Wo? ",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.indigo.shade900,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                          Text.rich(
+                                            TextSpan(
+                                              text: "Alte Mensa",
+                                              style: TextStyle(
+                                                color: Colors.indigo.shade900,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 100,
+                                          height: 15,
+                                          decoration: BoxDecoration(
+                                            color: Colors.indigo.shade900,
+                                            border: Border.all(
+                                              color: Colors.indigo.shade900,
+                                            ),
+                                            borderRadius: const BorderRadius.all(
+                                              const Radius.circular(20),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Text.rich(
+                                                TextSpan(
+                                                  text: "zum Angebot",
+                                                  style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    child: Row(
+                                    //color: Colors.green,
+                                    height: 60,
+                                    width: 160,
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
-                                        Text.rich(
-                                          TextSpan(
-                                            children: [
-                                              TextSpan(
-                                                text: "Wann? ",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: "4.DS",
-                                              ),
-                                            ],
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(20.0),
+                                          child: Image.asset(
+                                            "pictures/food.jpg",
+                                            height: 60,
+                                            width: 80,
                                           ),
                                         ),
                                       ],
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Row(
-                                      children: [
-                                        Text.rich(
-                                          TextSpan(
-                                            children: [
-                                              TextSpan(
-                                                text: "Wo? ",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: "Alte Mensa",
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-
                                     ),
                                   ),
                                 ],
                               ),
-                            ),//-----------------------------------------------------------------------------------
-                            Container(
-                              width: 150,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.indigo.shade100,
-                                border: Border.all(
-                                  color: Colors.indigo.shade100,
-                                  width: 5,
-                                ),
-                                borderRadius: const BorderRadius.all(
-                                  const Radius.circular(20),
-                                ),
-                              ),
-                              child: Icon(
-                                Icons.picture_in_picture,
-                                size: 50,
-                              ),
-                            )
-                          ],
-                        )
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
 
                   //Stundenplan Feld ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                   Container(
-                    width: 400,
-                    height: 185,
-
+                    width: screenSize.width,
+                    height: 175,
                     decoration: BoxDecoration(
                       color: Colors.indigo.shade100,
                       border: Border.all(
-                        color: Colors.indigo.shade900,
+                        color: Color(0xff032555),
                         width: 5,
                       ),
                       borderRadius: const BorderRadius.all(
                         const Radius.circular(20),
                       ),
                     ),
-
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -407,360 +543,302 @@ class myApp extends StatelessWidget {
                                 color: Colors.indigo.shade900,
                               ),
                               Container(
-                                  color: Colors.indigo.shade100,
-                                  width: 280,
-                                  child: Text.rich(
-                                      TextSpan(
-                                        text: "Heute",
-                                        style: TextStyle(
-                                          color: Colors.indigo.shade900,
-                                        ),
+                                  //color: Colors.red,
+                                  width: 275,
+                                  height: 20,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text.rich(
+                                          TextSpan(
+                                            text: "Heute",
+                                            style: TextStyle(
+                                              color: Colors.indigo.shade900,
+                                            ),
+                                          ),
                                       ),
+                                    ],
                                   ),
                               ),
                               Icon(
-                                  Icons.more_vert,
-                                  color: Colors.indigo.shade900,
+                                Icons.more_vert,
+                                color: Colors.indigo.shade900,
                               ),
                             ],
                           ),
                         ),
-
-                        Container(  //erste Zeile ####################################################################################
-                          decoration: BoxDecoration(
-                            color: Colors.indigo.shade100,
-                            border: Border.all(
-                              color: Colors.indigo.shade100,
-                            ),
-                          ),
-                          height: 65,
-                          width: 250,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  width: 70,
-                                  height:60,
-
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: 0,
-                                    ),
-                                    borderRadius: const BorderRadius.all(
-                                      const Radius.circular(10),
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 20,
-                                        decoration: BoxDecoration(
-                                          color: Colors.indigo.shade900,
-                                          border: Border.all(
-                                            color: Colors.indigo.shade900,
-                                            width: 0,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topRight: Radius.circular(10),
-                                            topLeft: Radius.circular(10),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Icon(
-                                              color: Colors.white,
-                                              Icons.edit,
-                                              size: 10,
-                                            ),
-                                            Text.rich(
-                                                TextSpan(
-                                                  text: "07:30",
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    color: Colors.white,
-                                                  ),
-                                                )
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 25,
-                                        width: 40,
-                                        color: Colors.white,
-                                        child: Column(
-                                          children: [
-                                            Text.rich(
-                                              TextSpan(
-                                                text: "EMI Ü",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                ),
-                                              ),
-                                            ),
-                                            Text.rich(
-                                              TextSpan(
-                                                text: "APB E040",
-                                                style: TextStyle(
-                                                  fontSize: 8,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width: 70,
-                                  height:60,
-
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: 0,
-                                    ),
-                                    borderRadius: const BorderRadius.all(
-                                      const Radius.circular(10),
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 20,
-
-                                        decoration: BoxDecoration(
-                                          color: Colors.blueGrey.shade600,
-                                          border: Border.all(
-                                            color: Colors.blueGrey.shade600,
-                                            width: 0,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topRight:  Radius.circular(10),
-                                            topLeft: Radius.circular(10),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Icon(
-                                              color: Colors.white,
-                                              Icons.sunny,
-                                              size: 10,
-                                            ),
-                                            Text.rich(
-                                                TextSpan(
-                                                  text: "09:20",
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    color: Colors.white,
-                                                  ),
-                                                )
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 25,
-                                        width: 40,
-                                        color: Colors.white,
-                                        child: Column(
-                                          children: [
-                                            Text.rich(
-                                              TextSpan(
-                                                text: "frei",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                ),
-                                              ),
-                                            ),
-                                            Text.rich(
-                                              TextSpan(
-                                                text: " ",
-                                                style: TextStyle(
-                                                  fontSize: 8,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width: 70,
-                                  height:60,
-
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: 0,
-                                    ),
-                                    borderRadius: const BorderRadius.all(
-                                      const Radius.circular(10),
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 20,
-
-                                        decoration: BoxDecoration(
-                                          color: Colors.indigo.shade900,
-                                          border: Border.all(
-                                            color: Colors.indigo.shade900,
-                                            width: 0,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topRight:  Radius.circular(10),
-                                            topLeft: Radius.circular(10),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Icon(
-                                              color: Colors.white,
-                                              Icons.import_contacts,
-                                              size: 10,
-                                            ),
-                                            Text.rich(
-                                                TextSpan(
-                                                  text: "11:10",
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                    color: Colors.white,
-                                                  ),
-                                                )
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 25,
-                                        width: 40,
-                                        color: Colors.white,
-                                        child: Column(
-                                          children: [
-                                            Text.rich(
-                                              TextSpan(
-                                                text: "EMI VL",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                ),
-                                              ),
-                                            ),
-                                            Text.rich(
-                                              TextSpan(
-                                                text: "HSZ 03",
-                                                style: TextStyle(
-                                                  fontSize: 8,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ]
-                          ),
-                        ),
-
-                        Container( //zweite Zeile ############################################################################
-                          decoration: BoxDecoration(
-                            color: Colors.indigo.shade100,
-                            border: Border.all(
-                              color: Colors.indigo.shade100,
-                              width: 5,
-                            ),
-                            borderRadius: const BorderRadius.all(
-                              const Radius.circular(20),
-                            ),
-                          ),
-                          height: 70,
-                          width: 250,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        Container(
+                          //color: Colors.red,
+                          width: 350,
+                          height: 125,
+                          child: Column(
                             children: [
                               Container(
-                                width: 70,
-                                height:60,
-
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 0,
-                                  ),
-                                  borderRadius: const BorderRadius.all(
-                                    const Radius.circular(10),
-                                  ),
-                                ),
-                                child: Column(
-                                  children: [
+                                //color: Colors.red,
+                                width: 350,
+                                height: 60,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children:
+                                  [
                                     Container(
-                                      height: 20,
-
+                                      height: 60,
+                                      width: 70,
                                       decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        border: Border.all(
-                                          color: Colors.green,
-                                          width: 0,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft:  Radius.circular(10),
-                                          topRight: Radius.circular(10),
-                                        ),
+                                        //color: Colors.yellow,
                                       ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      child: Column(
                                         children: [
-                                          Icon(
-                                            color: Colors.white,
-                                            Icons.local_cafe,
-                                            size: 10,
-                                          ),
-                                          Text.rich(
-                                              TextSpan(
-                                                text: "13:00",
-                                                style: TextStyle(
-                                                  fontSize: 10,
+                                          Container(
+                                            height: 20,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.indigo.shade600,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.indigo.shade600,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                topRight: Radius.circular(5),
+                                                topLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.edit,
                                                   color: Colors.white,
+                                                  size: 10,
                                                 ),
-                                              )
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "7:30",
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 36,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.white,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                bottomRight: Radius.circular(5),
+                                                bottomLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Column(
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "EMI Ü",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "APB E040",
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
                                     ),
                                     Container(
-                                      height: 25,
-                                      width: 40,
-                                      color: Colors.white,
+                                      height: 60,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.yellow,
+                                      ),
                                       child: Column(
                                         children: [
-                                          Text.rich(
-                                            TextSpan(
-                                              text: "Mensa",
-                                              style: TextStyle(
-                                                fontSize: 10,
+                                          Container(
+                                            height: 20,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.blueGrey,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.blueGrey,
                                               ),
+                                              borderRadius: const BorderRadius.only(
+                                                topRight: Radius.circular(5),
+                                                topLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.wb_sunny_outlined,
+                                                  color: Colors.white,
+                                                  size: 10,
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "9:20",
+                                                    style: TextStyle(
+                                                        fontSize: 10,
+                                                        color: Colors.white
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          Text.rich(
-                                            TextSpan(
-                                              text: " ",
-                                              style: TextStyle(
-                                                fontSize: 8,
+                                          Container(
+                                            height: 36,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.white,
                                               ),
+                                              borderRadius: const BorderRadius.only(
+                                                bottomRight: Radius.circular(5),
+                                                bottomLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Column(
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "frei",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: " ",
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 60,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.yellow,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 20,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.indigo.shade600,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.indigo.shade600,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                topRight: Radius.circular(5),
+                                                topLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.import_contacts_outlined,
+                                                  color: Colors.white,
+                                                  size: 10,
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "11:10",
+                                                    style: TextStyle(
+                                                        fontSize: 10,
+                                                        color: Colors.white
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 36,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.white,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                bottomRight: Radius.circular(5),
+                                                bottomLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Column(
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "EMI VL",
+                                                    style: TextStyle(
+                                                      color: Colors.indigo.shade600,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "HSZ 03",
+                                                    style: TextStyle(
+                                                      color: Colors.indigo.shade600,
+                                                      fontSize: 10,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],
@@ -770,153 +848,271 @@ class myApp extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                width: 70,
-                                height:60,
-
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 0,
-                                  ),
-                                  borderRadius: const BorderRadius.all(
-                                    const Radius.circular(10),
-                                  ),
-                                ),
-                                child: Column(
+                                //color: Colors.green,
+                                width: 350,
+                                height: 60,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      height: 20,
-
+                                      height: 60,
+                                      width: 70,
                                       decoration: BoxDecoration(
-                                        color: Colors.indigo.shade900,
-                                        border: Border.all(
-                                          color: Colors.indigo.shade900,
-                                          width: 0,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          topRight: Radius.circular(10),
-                                        ),
+                                        //color: Colors.yellow,
                                       ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Icon(
-                                            color: Colors.white,
-                                            Icons.edit,
-                                            size: 10,
-                                          ),
-                                          Text.rich(
-                                              TextSpan(
-                                                text: "14:50",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: Colors.white,
-                                                ),
-                                              )
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 25,
-                                      width: 40,
-                                      color: Colors.white,
                                       child: Column(
                                         children: [
-                                          Text.rich(
-                                            TextSpan(
-                                              text: "AUD Ü",
-                                              style: TextStyle(
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                          ),
-                                          Text.rich(
-                                            TextSpan(
-                                              text: "APB E001",
-                                              style: TextStyle(
-                                                fontSize: 8,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                width: 70,
-                                height:60,
+                                          Container(
+                                            height: 20,
+                                            width: 65,
 
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 0,
-                                  ),
-                                  borderRadius: const BorderRadius.all(
-                                    const Radius.circular(10),
-                                  ),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 20,
+                                            decoration: BoxDecoration(
+                                              color: Colors.green,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.green,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                topRight: Radius.circular(5),
+                                                topLeft: Radius.circular(5),
+                                              ),
 
-                                      decoration: BoxDecoration(
-                                        color: Colors.blueGrey.shade600,
-                                        border: Border.all(
-                                          color: Colors.blueGrey.shade600,
-                                          width: 0,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          topRight: Radius.circular(10),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Icon(
-                                            color: Colors.white,
-                                            Icons.sunny,
-                                            size: 10,
-                                          ),
-                                          Text.rich(
-                                              TextSpan(
-                                                text: "16:20",
-                                                style: TextStyle(
-                                                  fontSize: 10,
+                                            ),
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.local_cafe_outlined,
                                                   color: Colors.white,
+                                                  size: 10,
                                                 ),
-                                              )
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "13:00",
+                                                    style: TextStyle(
+                                                        fontSize: 10,
+                                                        color: Colors.white
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 36,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.white,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                bottomRight: Radius.circular(5),
+                                                bottomLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Column(
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "Mensa",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: " ",
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
                                     ),
                                     Container(
-                                      height: 25,
-                                      width: 40,
-                                      color: Colors.white,
+                                      height: 60,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.yellow,
+                                      ),
                                       child: Column(
                                         children: [
-                                          Text.rich(
-                                            TextSpan(
-                                              text: "frei",
-                                              style: TextStyle(
-                                                fontSize: 10,
+                                          Container(
+                                            height: 20,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.indigo.shade600,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.indigo.shade600,
                                               ),
+                                              borderRadius: const BorderRadius.only(
+                                                topRight: Radius.circular(5),
+                                                topLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.edit,
+                                                  color: Colors.white,
+                                                  size: 10,
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "14:50",
+                                                    style: TextStyle(
+                                                        fontSize: 10,
+                                                        color: Colors.white
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          Text.rich(
-                                            TextSpan(
-                                              text: " ",
-                                              style: TextStyle(
-                                                fontSize: 8,
+                                          Container(
+                                            height: 36,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.white,
                                               ),
+                                              borderRadius: const BorderRadius.only(
+                                                bottomRight: Radius.circular(5),
+                                                bottomLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Column(
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "EMI Ü",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "APB E001",
+                                                    style: TextStyle(
+                                                      color: Colors.indigo.shade600,
+                                                      fontSize: 10,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 60,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                        //color: Colors.yellow,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 20,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.blueGrey,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.blueGrey,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                topRight: Radius.circular(5),
+                                                topLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Icon(
+                                                  Icons.wb_sunny_outlined,
+                                                  color: Colors.white,
+                                                  size: 10,
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "16:20",
+                                                    style: TextStyle(
+                                                        fontSize: 10,
+                                                        color: Colors.white
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 36,
+                                            width: 65,
+
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                width: 2,
+                                                color: Colors.white,
+                                              ),
+                                              borderRadius: const BorderRadius.only(
+                                                bottomRight: Radius.circular(5),
+                                                bottomLeft: Radius.circular(5),
+                                              ),
+
+                                            ),
+
+                                            child: Column(
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: "frei",
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text.rich(
+                                                  TextSpan(
+                                                    text: " ",
+                                                    style: TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.indigo.shade600,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],
@@ -932,125 +1128,62 @@ class myApp extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
           ),
-
-
           //AppBar unten +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
           bottomNavigationBar: SizedBox(
-            height: 40,
-            child: DecoratedBox(
-                decoration: BoxDecoration(
-                    color: Colors.white),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.sticky_note_2,
-                        size: 25,
-                        color: Colors.indigo.shade900,
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "Dash",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.indigo.shade900,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+            height: 75,
+            child: BottomNavigationBar(
+                selectedFontSize: 10,
+                unselectedFontSize: 10,
+                backgroundColor: Colors.white,
+                useLegacyColorScheme: false,
+                showUnselectedLabels: true,
+
+                unselectedLabelStyle: const TextStyle(
+                  color: Color(0xff032555),
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      Icon(
+                items: const [
+                  BottomNavigationBarItem(
+                    label: "Dash",
+                    icon: Icon(
+                      Icons.sticky_note_2_outlined,
+                      size: 25,
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                      label: "Musik",
+                      icon: Icon(
                         Icons.music_note,
                         size: 25,
-                        color: Colors.indigo.shade900,
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "Musik",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.indigo.shade900,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [
-                      Icon(
+                        color: Color(0xff032555),
+                      )),
+                  BottomNavigationBarItem(
+                      label: "Stundenplan",
+                      icon: Icon(
                         Icons.today,
                         size: 25,
-                        color: Colors.indigo.shade900,
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "Stundenplan",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.indigo.shade900,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [
-                      Icon(
+                        color: Color(0xff032555),
+                      )),
+                  BottomNavigationBarItem(
+                      label: "Todo",
+                      icon: Icon(
                         Icons.list,
                         size: 25,
-                        color: Colors.indigo.shade900,
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "Todo",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.indigo.shade900,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [
-                      Icon(
+                        color: Color(0xff032555),
+                      )),
+                  BottomNavigationBarItem(
+                      label: "test",
+                      icon: Icon(
                         Icons.star,
                         size: 25,
-                        color: Colors.indigo.shade900,
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "(Eure Idee)",
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.indigo.shade900,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+                        color: Color(0xff032555),
+                      )),
+                ]
             ),
           ),
 
-        )
-    );
+        ));
   }
 }
